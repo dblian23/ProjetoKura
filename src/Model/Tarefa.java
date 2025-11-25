@@ -2,7 +2,7 @@ package model;
 
 public class Tarefa {
 
-    private int id; // conferir se precisa ou se é alfgo que vai só no banco!
+//    private int id; // conferir se precisa ou se é alfgo que vai só no banco!
     private String titulo;
     private String descricao;
     private String materia;
