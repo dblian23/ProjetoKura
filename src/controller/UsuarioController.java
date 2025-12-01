@@ -5,14 +5,17 @@ import Model.Usuario;
 
 public class UsuarioController {
 
-    UsuarioDAO dao = new UsuarioDAO();
+    private UsuarioDAO dao;
 
-    public boolean cadastrar(String nome, String email, String senha, String dataNascimento) {
-        Usuario u = new Usuario(nome, email, senha, dataNascimento);
+    public UsuarioController() {
+        this.dao = new UsuarioDAO();
+    }
+
+    public boolean cadastrar(Usuario u) {
         return dao.cadastrar(u);
     }
 
-    public Usuario login(String email, String senha) {
-        return dao.login(email, senha);
+    public Usuario fazerLogin(String email, String senha) {
+        return dao.fazerLogin(email, senha);
     }
 }

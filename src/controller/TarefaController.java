@@ -1,30 +1,23 @@
 package controller;
 
 import dao.TarefaDAO;
-import java.time.LocalDate;
-import model.Tarefa;
-import java.util.ArrayList;
+import Model.Tarefa;
+import Model.Usuario;
+import java.util.List;
 
 public class TarefaController {
 
-    TarefaDAO dao = new TarefaDAO();
+    private TarefaDAO dao;
 
-    public boolean criarTarefa(String titulo, String descricao, String materia, String prioridade, String dataEntrega, int usuarioId) {
-
-        Tarefa t = new Tarefa(
-            titulo,
-            descricao,
-            materia,
-            prioridade,
-            LocalDate.now().toString(),
-            dataEntrega,
-            usuarioId
-        );
-
-        return dao.salvar(t);
+    public TarefaController() {
+        this.dao = new TarefaDAO();
     }
 
-    public ArrayList<Tarefa> listar(int usuarioId) {
-        return dao.listar(usuarioId);
+    public boolean criar(Tarefa t) {
+        return dao.criar(t);
+    }
+
+    public List<Tarefa> listarPorUsuario(Usuario u) {
+        return dao.listarPorUsuario(u);
     }
 }
