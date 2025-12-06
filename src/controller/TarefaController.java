@@ -17,6 +17,14 @@ public class TarefaController {
         return dao.criar(t);
     }
 
+    public boolean editar(Tarefa t) {
+        return dao.editar(t);
+    }
+
+    public boolean excluir(int idTarefa) {
+        return dao.excluir(idTarefa);
+    }
+
     public List<Tarefa> listarPorUsuario(Usuario u) {
         return dao.listarPorUsuario(u);
     }
