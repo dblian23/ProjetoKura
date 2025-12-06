@@ -11,6 +11,7 @@ public class Tarefa {
 
     private Usuario usuario;
 
+    // Getters e Setters
     public int getIdTarefa() { return idTarefa; }
     public void setIdTarefa(int idTarefa) { this.idTarefa = idTarefa; }
 
