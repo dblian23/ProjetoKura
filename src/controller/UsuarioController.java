@@ -3,6 +3,7 @@ package controller;
 import dao.UsuarioDAO;
 import Model.Usuario;
 
+
 public class UsuarioController {
 
     private UsuarioDAO dao;
@@ -16,6 +17,8 @@ public class UsuarioController {
     }
 
     public Usuario fazerLogin(String email, String senha) {
-        return dao.fazerLogin(email, senha);
+   //     return dao.fazerLogin(email, senha);
+           return dao.login(email, senha);
+           
     }
 }
