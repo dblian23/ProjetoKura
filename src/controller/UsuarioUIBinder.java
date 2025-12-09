@@ -34,11 +34,11 @@ public class UsuarioUIBinder {
             Field fBtnCadastro = login.getClass().getDeclaredField("jButtonCad");
             fBtnCadastro.setAccessible(true);
             JButton btnCadastro = (JButton) fBtnCadastro.get(login);
-            btnCadastro.addActionListener(e -> {
+           /* btnCadastro.addActionListener(e -> {
                 Cadastro cad = new Cadastro();
                 UsuarioUIBinder.bindToCadastro(cad);
                 cad.setVisible(true);
-            });
+            });*/
 
         } catch (Exception e) {
             logger.log(Level.SEVERE, "Erro ao anexar eventos ao Login", e);
