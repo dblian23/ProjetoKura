@@ -15,9 +15,13 @@ public class Login extends javax.swing.JFrame {
     /**
      * Creates new form Login
      */
-    public Login() {
-        initComponents();
-    }
+    
+public Login() {
+    initComponents();
+    System.out.println("[DEBUG] Login constructor: initComponents finished. this=" + this);
+    controller.UsuarioUIBinder.bindToLogin(this);
+    System.out.println("[DEBUG] UsuarioUIBinder.bindToLogin called.");
+}
 
     /**
      * This method is called from within the constructor to initialize the form.
