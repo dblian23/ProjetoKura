@@ -16,9 +16,9 @@ public class ConnectFactory {
 
             // Faz conexão
             return DriverManager.getConnection(
-                    "jdbc:mysql://127.0.0.1:3306/projetokuramysql",
+                    "jdbc:mysql://localhost:3306/projetokura",
                     "root",
-                    "Manu@02139786"
+                    "MatheusLopes200209!"
             );
 
         } catch (ClassNotFoundException e) {
