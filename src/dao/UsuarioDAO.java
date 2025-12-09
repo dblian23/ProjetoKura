@@ -4,7 +4,9 @@ import connect.ConnectFactory;
 import Model.Usuario;
 import java.sql.*;
 import java.time.LocalDate;
-    
+import java.sql.Date;
+import javax.swing.JOptionPane;
+
 
 public class UsuarioDAO {
 
@@ -17,21 +19,27 @@ public class UsuarioDAO {
             stmt.setString(1, usuario.getNome());
             stmt.setString(2, usuario.getEmail());
             stmt.setString(3, usuario.getSenha());
-//            stmt.setString(4, usuario.getDataNascimento());
-             LocalDate data = usuario.getDataNascimento();
+//           stmt.setString(4, usuario.getDataNascimento());
+              LocalDate data = usuario.getDataNascimento();
             if (data != null) {
-                stmt.setDate(4, Date.valueOf(data));
+                stmt.setDate(4, java.sql.Date.valueOf(data));   
             } else {
-                stmt.setNull(4, Types.DATE);
+                stmt.setNull(4, java.sql.Types.DATE);
             }
-            
+       
             
             stmt.execute();
             return true;
 
-        } catch (SQLException e) {
-            System.out.println("Erro ao cadastrar usuário: " + e.getMessage());
-            return false;
+        }catch (SQLException e) {
+            e.printStackTrace();  // manda pro Output do NetBeans
+            JOptionPane.showMessageDialog(
+            null,
+            "Erro ao cadastrar usuário:\n" + e.getMessage(),
+            "Erro SQL",
+            JOptionPane.ERROR_MESSAGE
+        );
+        return false;
         }
     }
 
