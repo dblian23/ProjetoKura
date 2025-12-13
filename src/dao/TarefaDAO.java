@@ -3,6 +3,8 @@ package dao;
 import connect.ConnectFactory;
 import Model.Tarefa;
 import Model.Usuario;
+import java.time.LocalDate;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +27,8 @@ public class TarefaDAO {
             stmt.setString(2, t.getDescricao());
             stmt.setString(3, t.getMateria());
             stmt.setString(4, t.getPrioridade());
-            stmt.setString(5, t.getDataEntrega());
+ //           stmt.setString(5, t.getDataEntrega());
+            stmt.setDate(5, Date.valueOf(t.getDataEntrega()));
             stmt.setInt(6, t.getUsuario().getIdUsuario());
 
             stmt.execute();
@@ -48,7 +51,7 @@ public class TarefaDAO {
             stmt.setString(2, t.getDescricao());
             stmt.setString(3, t.getMateria());
             stmt.setString(4, t.getPrioridade());
-            stmt.setString(5, t.getDataEntrega());
+            stmt.setDate(5, Date.valueOf(t.getDataEntrega())); 
             stmt.setInt(6, t.getIdTarefa());
 
             stmt.executeUpdate();
@@ -97,7 +100,7 @@ public class TarefaDAO {
                 t.setDescricao(rs.getString("descricao"));
                 t.setMateria(rs.getString("materia"));
                 t.setPrioridade(rs.getString("prioridade"));
-                t.setDataEntrega(rs.getString("dataEntrega"));
+                t.setDataEntrega(rs.getDate("dataEntrega").toLocalDate());
 
                 t.setUsuario(usuario); // associa o usuário dono da tarefa
 

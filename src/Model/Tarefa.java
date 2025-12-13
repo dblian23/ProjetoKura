@@ -1,4 +1,6 @@
 package Model;
+import java.time.LocalDate;
+
 
 public class Tarefa {
 
@@ -7,7 +9,7 @@ public class Tarefa {
     private String descricao;
     private String materia;
     private String prioridade;
-    private String dataEntrega;
+    private LocalDate dataEntrega;
 
     private Usuario usuario;
 
@@ -26,9 +28,13 @@ public class Tarefa {
 
     public String getPrioridade() { return prioridade; }
     public void setPrioridade(String prioridade) { this.prioridade = prioridade; }
+    public LocalDate getDataEntrega() {
+        return dataEntrega;
+    }
 
-    public String getDataEntrega() { return dataEntrega; }
-    public void setDataEntrega(String dataEntrega) { this.dataEntrega = dataEntrega; }
+    public void setDataEntrega(LocalDate dataEntrega) {
+        this.dataEntrega = dataEntrega;
+    }
 
     public Usuario getUsuario() { return usuario; }
     public void setUsuario(Usuario usuario) { this.usuario = usuario; }
