@@ -75,7 +75,8 @@ private static void realizarLogin(Login login) {
 
         if (u != null) {
             JOptionPane.showMessageDialog(login, "Login realizado com sucesso!");
-            new InicioTarefas().setVisible(true);
+ //           new InicioTarefas().setVisible(true);
+            new InicioTarefas(u).setVisible(true);
             login.dispose();
         } else {
             JOptionPane.showMessageDialog(login, "Email ou senha incorretos.");
