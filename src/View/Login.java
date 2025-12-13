@@ -18,9 +18,7 @@ public class Login extends javax.swing.JFrame {
     
 public Login() {
     initComponents();
-    System.out.println("[DEBUG] Login constructor: initComponents finished. this=" + this);
     controller.UsuarioUIBinder.bindToLogin(this);
-    System.out.println("[DEBUG] UsuarioUIBinder.bindToLogin called.");
 }
 
     /**
@@ -104,8 +102,7 @@ public Login() {
     }//GEN-LAST:event_jButtonCadActionPerformed
 
     private void jButtonEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEntrarActionPerformed
-        InicioTarefas iniciotarefas = new InicioTarefas();
-        iniciotarefas.setVisible(true);
+
     }//GEN-LAST:event_jButtonEntrarActionPerformed
 
     /**

@@ -4,6 +4,10 @@
  */
 package View;
 
+import Model.Usuario;
+import controller.TarefaController;
+import Model.Tarefa;
+import java.util.List;
 import java.time.LocalDate;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -16,10 +20,37 @@ public class InicioTarefas extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(InicioTarefas.class.getName());
 
+    private void carregarTarefasDoBanco() {
+    DefaultTableModel modelo = (DefaultTableModel) jTableTarefas.getModel();
+    modelo.setRowCount(0); // limpa tabela antes de preencher
+
+    try {
+        List<Tarefa> lista = controller.listarPorUsuario(usuarioLogado);
+        for (Tarefa t : lista) {
+            // correspondendo às colunas: Título, Descrição, Matéria, Prioridade, Data Início, Data Entrega, Editar, Excluir
+            modelo.addRow(new Object[]{
+                t.getTitulo(),
+                t.getDescricao(),
+                t.getMateria(),
+                t.getPrioridade(),
+                LocalDate.now().toString(),            // Data Início (pode ajustar se você tiver no model)
+                t.getDataEntrega() != null ? t.getDataEntrega() : "",
+                "Editar",
+                "Excluir"
+            });
+        }
+    } catch (Exception e) {
+        e.printStackTrace();
+        JOptionPane.showMessageDialog(this, "Erro ao carregar tarefas: " + e.getMessage());
+    }
+}
+    public InicioTarefas() {
+        initComponents();
+    }
     /**
      * Creates new form InicioTarefas
      */
-    public InicioTarefas() {
+ /*   public InicioTarefas() {
         initComponents();
         DefaultTableModel modelo = (DefaultTableModel) jTableTarefas.getModel();
 
@@ -28,7 +59,28 @@ public class InicioTarefas extends javax.swing.JFrame {
 
         jTableTarefas.getColumn("Excluir").setCellRenderer(new ButtonRenderer("Excluir"));
         jTableTarefas.getColumn("Excluir").setCellEditor(new ButtonEditor(new javax.swing.JCheckBox(), jTableTarefas, "excluir"));
-    }
+    }*/
+    
+private Usuario usuarioLogado;
+private TarefaController controller;
+
+public InicioTarefas(Usuario usuario) {
+    initComponents();
+    this.usuarioLogado = usuario;
+    this.controller = new TarefaController();
+    
+
+    // Configuração da tabela
+    jTableTarefas.getColumn("Editar").setCellRenderer(new ButtonRenderer("Editar"));
+    jTableTarefas.getColumn("Editar").setCellEditor(new ButtonEditor(new javax.swing.JCheckBox(), jTableTarefas, "editar"));
+
+    jTableTarefas.getColumn("Excluir").setCellRenderer(new ButtonRenderer("Excluir"));
+    jTableTarefas.getColumn("Excluir").setCellEditor(new ButtonEditor(new javax.swing.JCheckBox(), jTableTarefas, "excluir"));
+
+    // Carrega tarefas do banco
+    carregarTarefasDoBanco();
+}
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -98,27 +150,10 @@ public class InicioTarefas extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
-            logger.log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new InicioTarefas().setVisible(true));
-    }
+public static void main(String args[]) {
+    JOptionPane.showMessageDialog(null, 
+        "Esta tela não pode ser iniciada sem login.");
+}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;

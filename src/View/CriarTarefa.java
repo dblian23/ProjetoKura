@@ -9,19 +9,24 @@ package View;
  * @author lianp
  */
 public class CriarTarefa extends javax.swing.JFrame {
-    
+
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(CriarTarefa.class.getName());
-    
+
     private InicioTarefas telaTarefas;
     private int linhaEdicao = -1;
-    /**
-     * Creates new form CriarTarefa
-     */
+
+    // Construtor vazio (necessário para o NetBeans abrir no Design)
+    public CriarTarefa() {
+        initComponents();
+    }
+
+    // Construtor usado quando cria nova tarefa
     public CriarTarefa(InicioTarefas telaTarefas) {
         initComponents();
         this.telaTarefas = telaTarefas;
     }
-    
+
+    // Construtor usado para editar tarefa já existente
     public CriarTarefa(InicioTarefas telaTarefas, int linha, String titulo, String descricao, String materia, String prioridade, String dataEntrega) {
         initComponents();
         this.telaTarefas = telaTarefas;
@@ -33,6 +38,7 @@ public class CriarTarefa extends javax.swing.JFrame {
         jComboBoxPrioridade.setSelectedItem(prioridade);
         jTextFieldDataEntrega.setText(dataEntrega);
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -143,8 +149,7 @@ public class CriarTarefa extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        InicioTarefas tarefa = new InicioTarefas();
-        tarefa.setVisible(true);
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
