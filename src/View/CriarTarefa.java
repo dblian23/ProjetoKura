@@ -3,7 +3,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package View;
+import Model.Tarefa;
+import Model.Usuario;
+import controller.TarefaController;
 
+import java.time.LocalDate;
+
+import javax.swing.JOptionPane;
 /**
  *
  * @author lianp
@@ -11,7 +17,8 @@ package View;
 public class CriarTarefa extends javax.swing.JFrame {
 
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(CriarTarefa.class.getName());
-
+    private Usuario usuarioLogado;
+    private TarefaController controller;
     private InicioTarefas telaTarefas;
     private int linhaEdicao = -1;
 
@@ -21,9 +28,17 @@ public class CriarTarefa extends javax.swing.JFrame {
     }
 
     // Construtor usado quando cria nova tarefa
-    public CriarTarefa(InicioTarefas telaTarefas) {
-        initComponents();
+    public CriarTarefa(InicioTarefas telaTarefas, Usuario usuario
+    //InicioTarefas telaTarefas
+    ) 
+    {
+     /*   initComponents();
+        this.telaTarefas = telaTarefas;*/
+         initComponents();
         this.telaTarefas = telaTarefas;
+        this.usuarioLogado = usuario;
+        this.controller = new TarefaController();
+
     }
 
     // Construtor usado para editar tarefa já existente
@@ -147,29 +162,48 @@ public class CriarTarefa extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        String titulo = jTextFieldTitulo.getText();
+    String titulo = jTextFieldTitulo.getText();
     String descricao = jTextFieldDescrição.getText();
     String materia = jTextFieldMatéria.getText();
     String prioridade = jComboBoxPrioridade.getSelectedItem().toString();
-    String dataEntrega = jTextFieldDataEntrega.getText();
+    String dataTexto = jTextFieldDataEntrega.getText();
 
     // Validação simples (opcional, mas recomendado)
     if (titulo.isEmpty() || descricao.isEmpty() || materia.isEmpty() || 
-        prioridade.equals("Selecione o nível de Prioridade") || dataEntrega.isEmpty()) {
-        javax.swing.JOptionPane.showMessageDialog(this, "Preencha todos os campos!");
+        prioridade.equals("Selecione o nível de Prioridade") || dataTexto.isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Preencha todos os campos!");
         return;
     }
 
-    // Se for uma nova tarefa
-    if (linhaEdicao == -1) {
-        telaTarefas.adicionarTarefa(titulo, descricao, materia, prioridade, dataEntrega);
+    LocalDate dataEntrega;
+
+    try {
+        dataEntrega = LocalDate.parse(dataTexto);
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(this, "Data inválida. Use AAAA-MM-DD.");
+        return;
+    }
+    
+        // 🔹 CRIA A TAREFA
+    Tarefa tarefa = new Tarefa();
+    tarefa.setTitulo(titulo);
+    tarefa.setDescricao(descricao);
+    tarefa.setMateria(materia);
+    tarefa.setPrioridade(prioridade);
+    tarefa.setDataEntrega(dataEntrega);
+    tarefa.setUsuario(usuarioLogado); // 🔥 LINHA MAIS IMPORTANTE
+
+    boolean sucesso = controller.criar(tarefa);
+    
+    if (sucesso) {
+        JOptionPane.showMessageDialog(this, "Tarefa criada com sucesso!");
+        this.dispose();
+        new InicioTarefas(usuarioLogado).setVisible(true);
+        this.dispose();
     } else {
-        telaTarefas.atualizarTarefa(linhaEdicao, titulo, descricao, materia, prioridade, dataEntrega);
+        JOptionPane.showMessageDialog(this, "Erro ao salvar tarefa.");
     }
 
-    // Mostra novamente a tela de tarefas e fecha a atual
-    telaTarefas.setVisible(true);
-    this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
