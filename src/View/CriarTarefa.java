@@ -79,7 +79,6 @@ public class CriarTarefa extends javax.swing.JFrame {
         setBackground(new java.awt.Color(255, 102, 102));
         setMaximumSize(new java.awt.Dimension(1440, 810));
         setMinimumSize(new java.awt.Dimension(1440, 810));
-        setPreferredSize(new java.awt.Dimension(1440, 810));
 
         jScrollPane2.setMaximumSize(new java.awt.Dimension(1440, 810));
         jScrollPane2.setMinimumSize(new java.awt.Dimension(1440, 810));
@@ -90,7 +89,6 @@ public class CriarTarefa extends javax.swing.JFrame {
         jLayeredPane1.setMaximumSize(new java.awt.Dimension(1440, 810));
         jLayeredPane1.setMinimumSize(new java.awt.Dimension(1440, 810));
         jLayeredPane1.setName(""); // NOI18N
-        jLayeredPane1.setPreferredSize(new java.awt.Dimension(1440, 810));
         jLayeredPane1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton1.setBorder(null);
@@ -115,6 +113,11 @@ public class CriarTarefa extends javax.swing.JFrame {
         jTextFieldDataEntrega.setForeground(new java.awt.Color(255, 255, 255));
         jTextFieldDataEntrega.setText("Digite a data precista de conclusão/");
         jTextFieldDataEntrega.setBorder(null);
+        jTextFieldDataEntrega.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldDataEntregaActionPerformed(evt);
+            }
+        });
         jLayeredPane1.add(jTextFieldDataEntrega, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 620, 510, 40));
 
         jTextFieldTitulo.setBackground(new java.awt.Color(31, 80, 20));
@@ -124,6 +127,7 @@ public class CriarTarefa extends javax.swing.JFrame {
         jTextFieldTitulo.setBorder(null);
         jLayeredPane1.add(jTextFieldTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 120, 510, 30));
 
+        jTextFieldDescrição.setEditable(false);
         jTextFieldDescrição.setBackground(new java.awt.Color(31, 80, 20));
         jTextFieldDescrição.setFont(new java.awt.Font("Gill Sans MT", 0, 24)); // NOI18N
         jTextFieldDescrição.setForeground(new java.awt.Color(255, 255, 255));
@@ -207,8 +211,12 @@ public class CriarTarefa extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-
+        this.setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jTextFieldDataEntregaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldDataEntregaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldDataEntregaActionPerformed
 
     /**
      * @param args the command line arguments
