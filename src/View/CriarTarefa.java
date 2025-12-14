@@ -48,53 +48,35 @@ public class CriarTarefa extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jLayeredPane1 = new javax.swing.JLayeredPane();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         jTextFieldDataEntrega = new javax.swing.JTextField();
         jTextFieldTitulo = new javax.swing.JTextField();
         jTextFieldDescrição = new javax.swing.JTextField();
-        jTextFieldMatéria = new javax.swing.JTextField();
         jComboBoxPrioridade = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+        jTextFieldMatéria = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setBackground(new java.awt.Color(255, 102, 102));
+        setMaximumSize(new java.awt.Dimension(1440, 810));
+        setMinimumSize(new java.awt.Dimension(1440, 810));
+        setPreferredSize(new java.awt.Dimension(1440, 810));
 
-        jTextFieldDataEntrega.setBackground(new java.awt.Color(31, 80, 20));
-        jTextFieldDataEntrega.setFont(new java.awt.Font("Gill Sans MT", 0, 24)); // NOI18N
-        jTextFieldDataEntrega.setForeground(new java.awt.Color(255, 255, 255));
-        jTextFieldDataEntrega.setText("Digite a data precista de conclusão/");
-        jTextFieldDataEntrega.setBorder(null);
-        getContentPane().add(jTextFieldDataEntrega, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 620, 530, 40));
+        jScrollPane2.setMaximumSize(new java.awt.Dimension(1440, 810));
+        jScrollPane2.setMinimumSize(new java.awt.Dimension(1440, 810));
+        jScrollPane2.setOpaque(false);
+        jScrollPane2.setPreferredSize(new java.awt.Dimension(1440, 810));
 
-        jTextFieldTitulo.setBackground(new java.awt.Color(31, 80, 20));
-        jTextFieldTitulo.setFont(new java.awt.Font("Gill Sans MT", 0, 24)); // NOI18N
-        jTextFieldTitulo.setForeground(new java.awt.Color(255, 255, 255));
-        jTextFieldTitulo.setText("Digite o Titulo/");
-        jTextFieldTitulo.setBorder(null);
-        getContentPane().add(jTextFieldTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 120, 530, 40));
-
-        jTextFieldDescrição.setBackground(new java.awt.Color(31, 80, 20));
-        jTextFieldDescrição.setFont(new java.awt.Font("Gill Sans MT", 0, 24)); // NOI18N
-        jTextFieldDescrição.setForeground(new java.awt.Color(255, 255, 255));
-        jTextFieldDescrição.setText("Digite a Descrição/");
-        jTextFieldDescrição.setBorder(null);
-        getContentPane().add(jTextFieldDescrição, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 240, 530, 40));
-
-        jTextFieldMatéria.setBackground(new java.awt.Color(31, 80, 20));
-        jTextFieldMatéria.setFont(new java.awt.Font("Gill Sans MT", 0, 24)); // NOI18N
-        jTextFieldMatéria.setForeground(new java.awt.Color(255, 255, 255));
-        jTextFieldMatéria.setText("Digite a Matéria/");
-        jTextFieldMatéria.setBorder(null);
-        getContentPane().add(jTextFieldMatéria, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 370, 530, 40));
-
-        jComboBoxPrioridade.setBackground(new java.awt.Color(31, 80, 20));
-        jComboBoxPrioridade.setFont(new java.awt.Font("Gill Sans MT", 0, 24)); // NOI18N
-        jComboBoxPrioridade.setForeground(new java.awt.Color(255, 255, 255));
-        jComboBoxPrioridade.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione o nível de Prioridade", "Alta", "Média", "Baixa" }));
-        jComboBoxPrioridade.setBorder(null);
-        getContentPane().add(jComboBoxPrioridade, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 490, 530, 50));
+        jLayeredPane1.setBackground(new java.awt.Color(102, 102, 255));
+        jLayeredPane1.setMaximumSize(new java.awt.Dimension(1440, 810));
+        jLayeredPane1.setMinimumSize(new java.awt.Dimension(1440, 810));
+        jLayeredPane1.setName(""); // NOI18N
+        jLayeredPane1.setPreferredSize(new java.awt.Dimension(1440, 810));
+        jLayeredPane1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton1.setBorder(null);
         jButton1.setContentAreaFilled(false);
@@ -103,7 +85,7 @@ public class CriarTarefa extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 700, 230, 40));
+        jLayeredPane1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 700, 230, 40));
 
         jButton2.setContentAreaFilled(false);
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -111,13 +93,55 @@ public class CriarTarefa extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 690, 110, 70));
+        jLayeredPane1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 680, 90, 70));
+
+        jTextFieldDataEntrega.setBackground(new java.awt.Color(31, 80, 20));
+        jTextFieldDataEntrega.setFont(new java.awt.Font("Gill Sans MT", 0, 24)); // NOI18N
+        jTextFieldDataEntrega.setForeground(new java.awt.Color(255, 255, 255));
+        jTextFieldDataEntrega.setText("Digite a data precista de conclusão/");
+        jTextFieldDataEntrega.setBorder(null);
+        jLayeredPane1.add(jTextFieldDataEntrega, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 620, 510, 40));
+
+        jTextFieldTitulo.setBackground(new java.awt.Color(31, 80, 20));
+        jTextFieldTitulo.setFont(new java.awt.Font("Gill Sans MT", 0, 24)); // NOI18N
+        jTextFieldTitulo.setForeground(new java.awt.Color(255, 255, 255));
+        jTextFieldTitulo.setText("Digite o Titulo/");
+        jTextFieldTitulo.setBorder(null);
+        jLayeredPane1.add(jTextFieldTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 120, 510, 30));
+
+        jTextFieldDescrição.setBackground(new java.awt.Color(31, 80, 20));
+        jTextFieldDescrição.setFont(new java.awt.Font("Gill Sans MT", 0, 24)); // NOI18N
+        jTextFieldDescrição.setForeground(new java.awt.Color(255, 255, 255));
+        jTextFieldDescrição.setText("Digite a Descrição/");
+        jTextFieldDescrição.setBorder(null);
+        jLayeredPane1.add(jTextFieldDescrição, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 250, 510, 30));
+
+        jComboBoxPrioridade.setBackground(new java.awt.Color(31, 80, 20));
+        jComboBoxPrioridade.setFont(new java.awt.Font("Gill Sans MT", 0, 24)); // NOI18N
+        jComboBoxPrioridade.setForeground(new java.awt.Color(255, 255, 255));
+        jComboBoxPrioridade.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione o nível de Prioridade", "Alta", "Média", "Baixa" }));
+        jComboBoxPrioridade.setBorder(null);
+        jLayeredPane1.add(jComboBoxPrioridade, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 500, 510, 30));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/voltar back.png"))); // NOI18N
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 680, -1, -1));
+        jLayeredPane1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 670, 100, -1));
 
+        jTextFieldMatéria.setBackground(new java.awt.Color(31, 80, 20));
+        jTextFieldMatéria.setFont(new java.awt.Font("Gill Sans MT", 0, 24)); // NOI18N
+        jTextFieldMatéria.setForeground(new java.awt.Color(255, 255, 255));
+        jTextFieldMatéria.setText("Digite a Matéria/");
+        jTextFieldMatéria.setBorder(null);
+        jLayeredPane1.add(jTextFieldMatéria, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 370, 510, 30));
+
+        jLabel1.setBackground(new java.awt.Color(204, 0, 255));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/Inicio (11) (1).png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jLabel1.setName(""); // NOI18N
+        jLayeredPane1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1440, 810));
+
+        jScrollPane2.setViewportView(jLayeredPane1);
+        jLayeredPane1.getAccessibleContext().setAccessibleName("");
+
+        getContentPane().add(jScrollPane2, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -183,6 +207,8 @@ public class CriarTarefa extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBoxPrioridade;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLayeredPane jLayeredPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField jTextFieldDataEntrega;
     private javax.swing.JTextField jTextFieldDescrição;
     private javax.swing.JTextField jTextFieldMatéria;
