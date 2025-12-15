@@ -10,14 +10,21 @@ import controller.UsuarioController;
  * @author lianp
  */
 public class Perfil extends javax.swing.JFrame {
-
+    private InicioTarefas telaTarefas;
     private Usuario usuario;
     private UsuarioController controller;
 
-public Perfil(Usuario usuario) {
+public Perfil(InicioTarefas telaTarefas, Usuario usuario) {
 
 
+    if (usuario == null) {
+        JOptionPane.showMessageDialog(this,
+                "Esta tela não pode ser aberta sem login.");
+        dispose();
+        return;
+    }
         initComponents();
+        this.telaTarefas = telaTarefas;
         this.usuario = usuario;
         this.controller = new UsuarioController();
 
@@ -148,7 +155,11 @@ public Perfil(Usuario usuario) {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        this.setVisible(false);
+            this.dispose();
+            telaTarefas.setVisible(true); // volta para a tela anterior
+            telaTarefas.toFront();        // traz para frente
+            telaTarefas.requestFocus();
+            
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jtxtDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtDataActionPerformed

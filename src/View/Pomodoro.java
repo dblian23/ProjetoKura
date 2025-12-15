@@ -10,6 +10,8 @@ import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import javax.swing.Timer;
 import Model.Usuario;
+import javax.swing.JOptionPane;
+
 
     
 
@@ -27,23 +29,16 @@ public class Pomodoro extends javax.swing.JFrame {
      private boolean emPausa = false;
      private boolean emTrabalho = true;
      private Usuario usuarioLogado;
+     private InicioTarefas telaTarefas;
 
     /**
      * Creates new form Pomodoro
      */
 
-     public Pomodoro() {
-    initComponents();
-    configurarTimer();
-    iniciarTrabalho();
 
-    jButtonIniciar.addActionListener(e -> jButtonIniciarActionPerformed(e));
-    jButtonPausar.addActionListener(e -> jButtonPausarActionPerformed(e));
-    jButtonResetar.addActionListener(e -> jButtonResetarActionPerformed(e));
-}
-         
-public Pomodoro(Usuario usuario) {
+public Pomodoro(InicioTarefas telaTarefas, Usuario usuario) {
     initComponents();
+    this.telaTarefas = telaTarefas;
     this.usuarioLogado = usuario;
 
     configurarTimer();
@@ -202,41 +197,23 @@ public Pomodoro(Usuario usuario) {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-    InicioTarefas tarefa = new InicioTarefas(usuarioLogado);
-    tarefa.setVisible(true);
-    this.setVisible(false);
+        this.dispose();
+        telaTarefas.setVisible(true);
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        Perfil perfil = new Perfil (usuarioLogado);
-        perfil.setVisible(true);
-        this.setVisible(false);
+            Perfil perfil = new Perfil(telaTarefas, usuarioLogado);
+            perfil.setVisible(true);
+            this.setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
-            logger.log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new Pomodoro().setVisible(true));
+        JOptionPane.showMessageDialog(null,
+        "Esta tela não pode ser iniciada sem login.");
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables

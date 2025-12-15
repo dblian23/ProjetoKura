@@ -155,12 +155,14 @@ public InicioTarefas(Usuario usuario) {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        Pomodoro timer = new Pomodoro(usuarioLogado);
+        Pomodoro timer = new Pomodoro(this, usuarioLogado);
         timer.setVisible(true);
+            this.setVisible(false);
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        Perfil perfil = new Perfil(usuarioLogado);
+        Perfil perfil = new Perfil(this, usuarioLogado);
         perfil.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton3ActionPerformed

@@ -122,7 +122,7 @@ public class EditarTarefa extends javax.swing.JFrame {
                 jButton1EditarActionPerformed(evt);
             }
         });
-        jLayeredPane1Editar.add(jButton1Editar, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 700, 230, 40));
+        jLayeredPane1Editar.add(jButton1Editar, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 700, 250, 70));
 
         jButton2Editar.setContentAreaFilled(false);
         jButton2Editar.addActionListener(new java.awt.event.ActionListener() {
@@ -231,7 +231,11 @@ public class EditarTarefa extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1EditarActionPerformed
 
     private void jButton2EditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2EditarActionPerformed
-        this.setVisible(false);
+    this.dispose();
+    telaTarefas.setVisible(true);
+    telaTarefas.toFront();
+    telaTarefas.requestFocus();
+    
     }//GEN-LAST:event_jButton2EditarActionPerformed
 
     private void jTextFieldDataEntregaEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldDataEntregaEditarActionPerformed

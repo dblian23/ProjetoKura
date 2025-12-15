@@ -210,8 +210,15 @@ public class CriarTarefa extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        this.setVisible(false);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    this.dispose();
+
+    if (telaTarefas != null) {
+        telaTarefas.setVisible(true);
+        telaTarefas.toFront();
+        telaTarefas.requestFocus();
+    } else {
+        new InicioTarefas(usuarioLogado).setVisible(true);
+    }    }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jTextFieldDataEntregaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldDataEntregaActionPerformed
         // TODO add your handling code here:
