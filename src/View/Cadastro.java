@@ -29,11 +29,11 @@ private static final java.util.logging.Logger logger = java.util.logging.Logger.
 
         jScrollPane2 = new javax.swing.JScrollPane();
         jLayeredPane1 = new javax.swing.JLayeredPane();
+        jButton1 = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
         jPasswordField1 = new javax.swing.JPasswordField();
-        jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -51,7 +51,14 @@ private static final java.util.logging.Logger logger = java.util.logging.Logger.
         jLayeredPane1.setName(""); // NOI18N
         jLayeredPane1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTextField1.setEditable(false);
+        jButton1.setContentAreaFilled(false);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jLayeredPane1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 640, 250, 80));
+
         jTextField1.setBackground(new java.awt.Color(31, 80, 20));
         jTextField1.setFont(new java.awt.Font("Gill Sans MT", 0, 24)); // NOI18N
         jTextField1.setForeground(new java.awt.Color(255, 255, 255));
@@ -90,14 +97,6 @@ private static final java.util.logging.Logger logger = java.util.logging.Logger.
         jPasswordField1.setBorder(null);
         jLayeredPane1.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 420, 530, 40));
 
-        jButton1.setContentAreaFilled(false);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        jLayeredPane1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 640, 250, 80));
-
         jLabel1.setBackground(new java.awt.Color(204, 0, 255));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/TelaCadastro.png"))); // NOI18N
         jLabel1.setName(""); // NOI18N
@@ -127,25 +126,21 @@ private static final java.util.logging.Logger logger = java.util.logging.Logger.
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
         try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+            for (javax.swing.UIManager.LookAndFeelInfo info :
+                    javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
             }
-        } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (Exception ex) {
             logger.log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
 
-        /* Create and display the form */
-        
+        java.awt.EventQueue.invokeLater(() -> {
+            new Cadastro().setVisible(true);
+        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
