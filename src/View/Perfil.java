@@ -135,7 +135,7 @@ private void bloquearCampos() {
         jLayeredPane1.add(jbtnExcluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 680, 240, 60));
 
         jLabel1.setBackground(new java.awt.Color(204, 0, 255));
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/Inicio (14) (1).png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/TelaPerfil.png"))); // NOI18N
         jLabel1.setName(""); // NOI18N
         jLayeredPane1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1440, 810));
 

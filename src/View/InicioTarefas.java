@@ -140,10 +140,10 @@ public InicioTarefas(Usuario usuario) {
         });
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1240, 20, 120, 60));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/perfil correct.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/NomePerfil.png"))); // NOI18N
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1240, 20, 140, 70));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/Inicio (12) (3).png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/TelaInicioTarefas.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();

@@ -142,7 +142,7 @@ public class CriarTarefa extends javax.swing.JFrame {
         jComboBoxPrioridade.setBorder(null);
         jLayeredPane1.add(jComboBoxPrioridade, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 500, 510, 30));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/voltar back.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/SetaVoltar.png"))); // NOI18N
         jLayeredPane1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 670, 100, -1));
 
         jTextFieldMatéria.setBackground(new java.awt.Color(31, 80, 20));
@@ -153,7 +153,7 @@ public class CriarTarefa extends javax.swing.JFrame {
         jLayeredPane1.add(jTextFieldMatéria, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 370, 510, 30));
 
         jLabel1.setBackground(new java.awt.Color(204, 0, 255));
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/Inicio (11) (1).png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/TelaCriarTarefa.png"))); // NOI18N
         jLabel1.setName(""); // NOI18N
         jLayeredPane1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1440, 810));
 
