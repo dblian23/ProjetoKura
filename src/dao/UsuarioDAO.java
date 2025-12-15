@@ -13,9 +13,9 @@ public class UsuarioDAO {
     public boolean cadastrar(Usuario usuario) {
         String sql = "INSERT INTO usuario (nome, email, senha, dataNascimento) VALUES (?, ?, ?, ?)";
 
-        try (Connection conn = ConnectFactory.getConnection();
-
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
+    Connection conn = ConnectFactory.getConnection();
+    try (PreparedStatement stmt = conn.prepareStatement(sql)) {
+ {
 
             stmt.setString(1, usuario.getNome());
             stmt.setString(2, usuario.getEmail());
@@ -28,10 +28,10 @@ public class UsuarioDAO {
                 stmt.setNull(4, java.sql.Types.DATE);
             }
        
-            
+             
             stmt.execute();
             return true;
-
+    }
         } catch (SQLException e) {
     AppLogger.error("Erro ao cadastrar usuário", e);
     return false;
@@ -42,9 +42,9 @@ public class UsuarioDAO {
 
         String sql = "SELECT * FROM usuario WHERE email = ? AND senha = ?";
 
-        try (Connection conn = ConnectFactory.getConnection();
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
-
+        Connection conn = ConnectFactory.getConnection();
+        try (PreparedStatement stmt = conn.prepareStatement(sql)) {
+    
             stmt.setString(1, email);
             stmt.setString(2, senha);
 
