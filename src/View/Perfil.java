@@ -186,11 +186,16 @@ String nome = jtxtNome.getText().trim();
 
         boolean sucesso = controller.editar(u);
 
-        if (sucesso) {
-            JOptionPane.showMessageDialog(this,
-                    "Dados atualizados com sucesso!");
-            usuario = u; // Atualiza usuário em memória
-        } else {
+if (sucesso) {
+    JOptionPane.showMessageDialog(this,
+            "Dados atualizados com sucesso!");
+
+    this.usuario = u;
+
+    if (telaTarefas != null) {
+        telaTarefas.setUsuarioLogado(u);
+    }}
+else {
             JOptionPane.showMessageDialog(this,
                     "Erro ao atualizar os dados.");
         }

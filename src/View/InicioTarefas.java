@@ -255,7 +255,9 @@ private void excluirTarefa(int linha) {
         JOptionPane.showMessageDialog(this, "Erro ao excluir tarefa.");
     }
 }
-
+public void setUsuarioLogado(Usuario usuario) {
+    this.usuarioLogado = usuario;
+}
 
     // Renderer (botão na célula)
     class ButtonRenderer extends javax.swing.JButton implements javax.swing.table.TableCellRenderer {
