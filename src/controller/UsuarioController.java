@@ -1,12 +1,13 @@
     package controller;
-
-import dao.UsuarioDAO;
-import Model.Usuario;
+    
+    import Model.Usuario;
+    import dao.UsuarioDAO;
+    import dao.UsuarioDAOInterface;
 
 
 public class UsuarioController {
 
-    private UsuarioDAO dao;
+    private UsuarioDAOInterface dao;
 
     public UsuarioController() {
         this.dao = new UsuarioDAO();

@@ -8,7 +8,7 @@ import java.sql.Date;
 import util.AppLogger;
 
 
-public class UsuarioDAO {
+public class UsuarioDAO implements UsuarioDAOInterface {
 
     public boolean cadastrar(Usuario usuario) {
         String sql = "INSERT INTO usuario (nome, email, senha, dataNascimento) VALUES (?, ?, ?, ?)";
