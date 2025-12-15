@@ -108,7 +108,7 @@
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/View/imagens/realizar cad.png"/>
+          <Image iconType="3" name="/View/imagens/NomeRealizarCadastro.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -120,7 +120,7 @@
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/View/imagens/entrar.png"/>
+          <Image iconType="3" name="/View/imagens/NomeEntrar.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -132,7 +132,7 @@
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/View/imagens/Inicio (3) (1).png"/>
+          <Image iconType="3" name="/View/imagens/TelaLogin.png"/>
         </Property>
       </Properties>
       <Constraints>
