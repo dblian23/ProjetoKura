@@ -79,7 +79,7 @@ public Pomodoro(InicioTarefas telaTarefas, Usuario usuario) {
     }
 
     private void iniciarTrabalho() {
-        tempoRestante = 25 * 60; // 25 min
+        tempoRestante = 1 * 30; // 25 min
         emTrabalho = true;
         emPausa = false;
         jLabelStatus.setText("Trabalho");
@@ -87,7 +87,7 @@ public Pomodoro(InicioTarefas telaTarefas, Usuario usuario) {
     }
 
     private void iniciarPausaCurta() {
-        tempoRestante = 5 * 60; // 5 min
+        tempoRestante = 1 * 30; // 5 min
         emTrabalho = false;
         emPausa = true;
         jLabelStatus.setText("Pausa Curta");
@@ -183,7 +183,7 @@ public Pomodoro(InicioTarefas telaTarefas, Usuario usuario) {
 
         jLabelTimer.setFont(new java.awt.Font("Segoe UI", 0, 120)); // NOI18N
         jLabelTimer.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelTimer.setText("25:00");
+        jLabelTimer.setText("0:30");
         jLabelTimer.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         getContentPane().add(jLabelTimer, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 350, 360, 170));
 
