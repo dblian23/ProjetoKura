@@ -4,21 +4,20 @@
  */
 package View;
 
-/**
- *
- * @author lianp
- */
 public class Cadastro extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Cadastro.class.getName());
+private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Cadastro.class.getName());
 
-    /**
-     * Creates new form Cadastro
-     */
+
+    // Construtor vazio (necessário para o NetBeans abrir no Design)
     public Cadastro() {
-    initComponents();
-    controller.UsuarioUIBinder.bindToCadastro(this);
-}
+        initComponents();
+         controller.UsuarioUIBinder.bindToCadastro(this);
+
+    }
+
+    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -28,89 +27,101 @@ public class Cadastro extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jLayeredPane1 = new javax.swing.JLayeredPane();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
         jPasswordField1 = new javax.swing.JPasswordField();
-        jButtonCadastrar = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setBackground(new java.awt.Color(255, 102, 102));
+        setMinimumSize(new java.awt.Dimension(1440, 810));
 
-        jTextField4.setBackground(new java.awt.Color(31, 80, 20));
-        jTextField4.setFont(new java.awt.Font("Gill Sans MT", 0, 24)); // NOI18N
-        jTextField4.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField4.setText("Digite sua data de nascimento/");
-        jTextField4.setBorder(null);
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        jScrollPane2.setMaximumSize(new java.awt.Dimension(1440, 810));
+        jScrollPane2.setMinimumSize(new java.awt.Dimension(1440, 810));
+        jScrollPane2.setOpaque(false);
+        jScrollPane2.setPreferredSize(new java.awt.Dimension(1440, 810));
+
+        jLayeredPane1.setBackground(new java.awt.Color(102, 102, 255));
+        jLayeredPane1.setMaximumSize(new java.awt.Dimension(1440, 810));
+        jLayeredPane1.setMinimumSize(new java.awt.Dimension(1440, 810));
+        jLayeredPane1.setName(""); // NOI18N
+        jLayeredPane1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jTextField1.setEditable(false);
+        jTextField1.setBackground(new java.awt.Color(31, 80, 20));
+        jTextField1.setFont(new java.awt.Font("Gill Sans MT", 0, 24)); // NOI18N
+        jTextField1.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField1.setText("Digite sua Data de Nascimento/");
+        jTextField1.setBorder(null);
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                jTextField1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 550, 530, 50));
+        jLayeredPane1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 550, 530, 50));
 
-        jTextField5.setBackground(new java.awt.Color(31, 80, 20));
-        jTextField5.setFont(new java.awt.Font("Gill Sans MT", 0, 24)); // NOI18N
-        jTextField5.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField5.setText("gfhghjkjhgfdfgh");
-        jTextField5.setBorder(null);
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+        jTextField2.setBackground(new java.awt.Color(31, 80, 20));
+        jTextField2.setFont(new java.awt.Font("Gill Sans MT", 0, 24)); // NOI18N
+        jTextField2.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField2.setText("Digite seu nome/");
+        jTextField2.setBorder(null);
+        jLayeredPane1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 140, 530, 50));
+
+        jTextField3.setBackground(new java.awt.Color(31, 80, 20));
+        jTextField3.setFont(new java.awt.Font("Gill Sans MT", 0, 24)); // NOI18N
+        jTextField3.setForeground(new java.awt.Color(255, 255, 255));
+        jTextField3.setText("Digite seu Email/");
+        jTextField3.setBorder(null);
+        jTextField3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
+                jTextField3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 140, 530, 50));
-
-        jTextField6.setBackground(new java.awt.Color(31, 80, 20));
-        jTextField6.setFont(new java.awt.Font("Gill Sans MT", 0, 24)); // NOI18N
-        jTextField6.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField6.setText("Digite seu email/");
-        jTextField6.setBorder(null);
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 280, 530, 50));
+        jLayeredPane1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 280, 530, 50));
 
         jPasswordField1.setBackground(new java.awt.Color(31, 80, 20));
         jPasswordField1.setFont(new java.awt.Font("Gill Sans MT", 0, 24)); // NOI18N
-        jPasswordField1.setText("jPasswordField1");
+        jPasswordField1.setForeground(new java.awt.Color(255, 255, 255));
+        jPasswordField1.setText("Digite sua senha");
         jPasswordField1.setBorder(null);
-        getContentPane().add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 420, 520, 50));
+        jLayeredPane1.add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 420, 530, 40));
 
-        jButtonCadastrar.setToolTipText("");
-        jButtonCadastrar.setContentAreaFilled(false);
-        jButtonCadastrar.addActionListener(new java.awt.event.ActionListener() {
+        jButton1.setContentAreaFilled(false);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonCadastrarActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonCadastrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 650, 240, 60));
+        jLayeredPane1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 640, 250, 80));
 
+        jLabel1.setBackground(new java.awt.Color(204, 0, 255));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/TelaCadastro.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jLabel1.setName(""); // NOI18N
+        jLayeredPane1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1440, 810));
+
+        jScrollPane2.setViewportView(jLayeredPane1);
+        jLayeredPane1.getAccessibleContext().setAccessibleName("");
+
+        getContentPane().add(jScrollPane2, java.awt.BorderLayout.CENTER);
 
         pack();
-        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtonCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadastrarActionPerformed
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField3ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         this.setVisible(false);
-    }//GEN-LAST:event_jButtonCadastrarActionPerformed
-
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
-
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
-
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -134,15 +145,17 @@ public class Cadastro extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new Cadastro().setVisible(true));
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonCadastrar;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
 }
