@@ -29,6 +29,7 @@ public class InicioTarefas extends javax.swing.JFrame {
         for (Tarefa t : lista) {
             // correspondendo às colunas: Título, Descrição, Matéria, Prioridade, Data Início, Data Entrega, Editar, Excluir
             modelo.addRow(new Object[]{
+                t.getIdTarefa(),  
                 t.getTitulo(),
                 t.getDescricao(),
                 t.getMateria(),

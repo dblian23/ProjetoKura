@@ -21,6 +21,8 @@ public class EditarTarefa extends javax.swing.JFrame {
     private TarefaController controller;
     private InicioTarefas telaTarefas;
     private int linhaEdicao = -1;
+    private int idTarefa;
+
 
     // Construtor vazio (necessário para o NetBeans abrir no Design)
     public EditarTarefa() {
@@ -42,16 +44,18 @@ public class EditarTarefa extends javax.swing.JFrame {
     }
 
     // Construtor usado para editar tarefa já existente
-    public EditarTarefa(InicioTarefas telaTarefas, int linha, String titulo, String descricao, String materia, String prioridade, String dataEntrega) {
+        public EditarTarefa(InicioTarefas telaTarefas, Usuario usuario, Tarefa tarefa) {
         initComponents();
         this.telaTarefas = telaTarefas;
-        this.linhaEdicao = linha;
+        this.usuarioLogado = usuario;
+        this.controller = new TarefaController();
+        this.idTarefa = tarefa.getIdTarefa();
 
-        jTextFieldTituloEditar.setText(titulo);
-        jTextFieldDescriçãoEditar.setText(descricao);
-        jTextFieldMatériaEditar.setText(materia);
-        jComboBoxPrioridadeEditar.setSelectedItem(prioridade);
-        jTextFieldDataEntregaEditar.setText(dataEntrega);
+        jTextFieldTituloEditar.setText(tarefa.getTitulo());
+        jTextFieldDescriçãoEditar.setText(tarefa.getDescricao());
+        jTextFieldMatériaEditar.setText(tarefa.getMateria());
+        jComboBoxPrioridadeEditar.setSelectedItem(tarefa.getPrioridade());
+        jTextFieldDataEntregaEditar.setText(tarefa.getDataEntrega().toString());
     }
 
     /**
@@ -188,6 +192,7 @@ public class EditarTarefa extends javax.swing.JFrame {
     
         // 🔹 CRIA A TAREFA
     Tarefa tarefa = new Tarefa();
+    tarefa.setIdTarefa(this.idTarefa);
     tarefa.setTitulo(titulo);
     tarefa.setDescricao(descricao);
     tarefa.setMateria(materia);
