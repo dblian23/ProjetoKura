@@ -25,9 +25,31 @@ public class EditarTarefa extends javax.swing.JFrame {
 
 
     // Construtor vazio (necessário para o NetBeans abrir no Design)
-    public EditarTarefa() {
+    public EditarTarefa(
+        InicioTarefas telaTarefas,
+        int idTarefa,
+        String titulo,
+        String descricao,
+        String materia,
+        String prioridade,
+        String dataEntrega,
+        Usuario usuario
+    )   {
+    
         initComponents();
+    
+        this.telaTarefas = telaTarefas;
+        this.idTarefa = idTarefa;
+        this.usuarioLogado = usuario;
+        this.controller = new TarefaController();
+
+        jTextFieldTituloEditar.setText(titulo);
+        jTextFieldDescriçãoEditar.setText(descricao);
+        jTextFieldMatériaEditar.setText(materia);
+        jComboBoxPrioridadeEditar.setSelectedItem(prioridade);
+        jTextFieldDataEntregaEditar.setText(dataEntrega);
     }
+
 
     // Construtor usado quando cria nova tarefa
     public EditarTarefa(InicioTarefas telaTarefas, Usuario usuario
@@ -198,9 +220,10 @@ public class EditarTarefa extends javax.swing.JFrame {
     tarefa.setMateria(materia);
     tarefa.setPrioridade(prioridade);
     tarefa.setDataEntrega(dataEntrega);
-    tarefa.setUsuario(usuarioLogado); // 🔥 LINHA MAIS IMPORTANTE
+    tarefa.setUsuario(usuarioLogado);
 
-    boolean sucesso = controller.criar(tarefa);
+    tarefa.setIdTarefa(idTarefa);
+    boolean sucesso = controller.editar(tarefa);
     
     if (sucesso) {
         JOptionPane.showMessageDialog(this, "Tarefa criada com sucesso!");

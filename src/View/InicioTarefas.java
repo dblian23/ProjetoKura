@@ -17,6 +17,7 @@ import javax.swing.table.DefaultTableModel;
  * @author lianp
  */
 public class InicioTarefas extends javax.swing.JFrame {
+
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(InicioTarefas.class.getName());
 
@@ -204,13 +205,29 @@ public static void main(String args[]) {
     // Abre tela de edição
     private void editarTarefa(int linha) {
         DefaultTableModel modelo = (DefaultTableModel) jTableTarefas.getModel();
-
+        
+        int idTarefa = Integer.parseInt(modelo.getValueAt(linha, 0).toString());
         String titulo = modelo.getValueAt(linha, 0).toString();
         String descricao = modelo.getValueAt(linha, 1).toString();
         String materia = modelo.getValueAt(linha, 2).toString();
         String prioridade = modelo.getValueAt(linha, 3).toString();
         String dataEntrega = modelo.getValueAt(linha, 5).toString();
+        
+        EditarTarefa editar = new EditarTarefa(
+            this,
+            idTarefa,
+            titulo,
+            descricao,
+            materia,
+            prioridade,
+            dataEntrega,
+            usuarioLogado
+        );
+        
+            editar.setVisible(true);
+            this.dispose();
 
+            
         CriarTarefa editarTela = new CriarTarefa(this, linha, titulo, descricao, materia, prioridade, dataEntrega);
         editarTela.setVisible(true);
         this.setVisible(false);
