@@ -1,5 +1,6 @@
 package controller;
 
+import dao.TarefaDAOInterface;
 import dao.TarefaDAO;
 import Model.Tarefa;
 import Model.Usuario;
@@ -7,7 +8,7 @@ import java.util.List;
 
 public class TarefaController {
 
-    private TarefaDAO dao;
+    private TarefaDAOInterface dao;
 
     public TarefaController() {
         this.dao = new TarefaDAO();

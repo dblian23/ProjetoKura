@@ -9,7 +9,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TarefaDAO {
+public class TarefaDAO implements TarefaDAOInterface {
 
     private Connection conn;
 
