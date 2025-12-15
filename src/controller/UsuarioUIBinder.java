@@ -92,7 +92,7 @@ private static void realizarLogin(Login login) {
     public static void bindToCadastro(Cadastro cadastro) {
         try {
             // botão cadastrar
-            Field fBtnCadastrar = cadastro.getClass().getDeclaredField("jButtonCadastrar");
+            Field fBtnCadastrar = cadastro.getClass().getDeclaredField("jButton1");
             fBtnCadastrar.setAccessible(true);
             JButton btnCadastrar = (JButton) fBtnCadastrar.get(cadastro);
             btnCadastrar.addActionListener(e -> realizarCadastro(cadastro));
@@ -104,10 +104,10 @@ private static void realizarLogin(Login login) {
 
     private static void realizarCadastro(Cadastro cadastro) {
         try {
-            Field fNome = cadastro.getClass().getDeclaredField("jTextField5");
-            Field fEmail = cadastro.getClass().getDeclaredField("jTextField6");
-            Field fSenha = cadastro.getClass().getDeclaredField("jPasswordField1");
-            Field fData  = cadastro.getClass().getDeclaredField("jTextField4");
+                Field fNome = cadastro.getClass().getDeclaredField("jTextField2");
+                Field fEmail = cadastro.getClass().getDeclaredField("jTextField3");
+                Field fSenha = cadastro.getClass().getDeclaredField("jPasswordField1");
+                Field fData  = cadastro.getClass().getDeclaredField("jTextField1");
 
             fNome.setAccessible(true);
             fEmail.setAccessible(true);
@@ -120,10 +120,21 @@ private static void realizarLogin(Login login) {
             String data  = ((JTextField) fData.get(cadastro)).getText().trim();
 
                 
-            if (nome.isEmpty() || email.isEmpty() || senha.isEmpty() || data.isEmpty()) {
-                JOptionPane.showMessageDialog(cadastro, "Preencha todos os campos!");
-                return;
-            }
+if (
+    nome.isEmpty() || nome.equals("Digite seu nome/") ||
+    email.isEmpty() || email.equals("Digite seu Email/") ||
+    senha.isEmpty() ||
+    data.isEmpty() || data.equals("Digite sua Data de Nascimento/")
+) {
+    JOptionPane.showMessageDialog(
+        cadastro,
+        "Preencha todos os campos corretamente.",
+        "Atenção",
+        JOptionPane.WARNING_MESSAGE
+    );
+    return;
+}
+
 
             UsuarioController controller = new UsuarioController();
 //            boolean sucesso = controller.cadastrar(nome, email, senha, data);
