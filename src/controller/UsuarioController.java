@@ -22,4 +22,13 @@ public class UsuarioController {
            return dao.login(email, senha);
            
     }
+    
+    public boolean editar(Usuario u) {
+        return dao.editar(u);
+    }
+
+    public boolean excluir(int idUsuario) {
+        return dao.excluir(idUsuario);
+    }
+    
 }
