@@ -13,7 +13,8 @@ public class UsuarioDAO {
     public boolean cadastrar(Usuario usuario) {
         String sql = "INSERT INTO usuario (nome, email, senha, dataNascimento) VALUES (?, ?, ?, ?)";
 
-        try (Connection conn = new ConnectFactory().getConnection();
+        try (Connection conn = ConnectFactory.getConnection();
+
              PreparedStatement stmt = conn.prepareStatement(sql)) {
 
             stmt.setString(1, usuario.getNome());
@@ -41,7 +42,7 @@ public class UsuarioDAO {
 
         String sql = "SELECT * FROM usuario WHERE email = ? AND senha = ?";
 
-        try (Connection conn = new ConnectFactory().getConnection();
+        try (Connection conn = ConnectFactory.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
 
             stmt.setString(1, email);

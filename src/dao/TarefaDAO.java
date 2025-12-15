@@ -14,7 +14,8 @@ public class TarefaDAO {
     private Connection conn;
 
     public TarefaDAO() {
-        this.conn = new ConnectFactory().getConnection();
+        this.conn = ConnectFactory.getConnection();
+;
     }
 
     // Criar tarefa

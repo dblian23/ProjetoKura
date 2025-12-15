@@ -27,14 +27,16 @@ public class ConnectFactory {
 
                 AppLogger.info("Conexão com o banco de dados estabelecida.");
             }
-
+        
         } catch (ClassNotFoundException e) {
             AppLogger.error("Driver JDBC não encontrado", e);
             return null;
 
         } catch (SQLException e) {
             AppLogger.error("Erro de conexão com o banco de dados", e);
-            return null;
 }
-    }
+                return connection;
+
+     }   
+     
 }
