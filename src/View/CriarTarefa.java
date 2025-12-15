@@ -127,7 +127,6 @@ public class CriarTarefa extends javax.swing.JFrame {
         jTextFieldTitulo.setBorder(null);
         jLayeredPane1.add(jTextFieldTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 120, 510, 30));
 
-        jTextFieldDescrição.setEditable(false);
         jTextFieldDescrição.setBackground(new java.awt.Color(31, 80, 20));
         jTextFieldDescrição.setFont(new java.awt.Font("Gill Sans MT", 0, 24)); // NOI18N
         jTextFieldDescrição.setForeground(new java.awt.Color(255, 255, 255));

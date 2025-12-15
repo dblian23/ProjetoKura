@@ -151,7 +151,6 @@ public class EditarTarefa extends javax.swing.JFrame {
         jTextFieldTituloEditar.setBorder(null);
         jLayeredPane1Editar.add(jTextFieldTituloEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 130, 520, 40));
 
-        jTextFieldDescriçãoEditar.setEditable(false);
         jTextFieldDescriçãoEditar.setBackground(new java.awt.Color(31, 80, 20));
         jTextFieldDescriçãoEditar.setFont(new java.awt.Font("Gill Sans MT", 0, 24)); // NOI18N
         jTextFieldDescriçãoEditar.setForeground(new java.awt.Color(255, 255, 255));
@@ -175,10 +174,7 @@ public class EditarTarefa extends javax.swing.JFrame {
 
         jLabel1Editar.setBackground(new java.awt.Color(204, 0, 255));
         jLabel1Editar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/TelaEditarTarefa.png"))); // NOI18N
-        jLabel1Editar.setMaximumSize(new java.awt.Dimension(1440, 810));
-        jLabel1Editar.setMinimumSize(new java.awt.Dimension(1440, 810));
         jLabel1Editar.setName(""); // NOI18N
-        jLabel1Editar.setPreferredSize(new java.awt.Dimension(1440, 810));
         jLayeredPane1Editar.add(jLabel1Editar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1500, 840));
 
         jScrollPane2Editar.setViewportView(jLayeredPane1Editar);

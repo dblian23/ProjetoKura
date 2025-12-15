@@ -17,7 +17,8 @@ import javax.swing.table.DefaultTableModel;
  * @author lianp
  */
 public class InicioTarefas extends javax.swing.JFrame {
-
+private Usuario usuarioLogado;
+private TarefaController controller;
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(InicioTarefas.class.getName());
 
@@ -45,9 +46,6 @@ public class InicioTarefas extends javax.swing.JFrame {
         e.printStackTrace();
         JOptionPane.showMessageDialog(this, "Erro ao carregar tarefas: " + e.getMessage());
     }
-}
-    public InicioTarefas() {
-        initComponents();
     }
     /**
      * Creates new form InicioTarefas
@@ -63,8 +61,7 @@ public class InicioTarefas extends javax.swing.JFrame {
         jTableTarefas.getColumn("Excluir").setCellEditor(new ButtonEditor(new javax.swing.JCheckBox(), jTableTarefas, "excluir"));
     }*/
     
-private Usuario usuarioLogado;
-private TarefaController controller;
+
 
 public InicioTarefas(Usuario usuario) {
     initComponents();
@@ -172,8 +169,7 @@ public InicioTarefas(Usuario usuario) {
      * @param args the command line arguments
      */
 public static void main(String args[]) {
-    JOptionPane.showMessageDialog(null, 
-        "Esta tela não pode ser iniciada sem login.");
+
 }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

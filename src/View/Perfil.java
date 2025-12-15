@@ -15,12 +15,7 @@ public class Perfil extends javax.swing.JFrame {
     private UsuarioController controller;
 
 public Perfil(Usuario usuario) {
-        if (usuario == null) {
-            JOptionPane.showMessageDialog(null,
-                    "Esta tela não pode ser aberta sem login.");
-            dispose();
-            return;
-        }
+
 
         initComponents();
         this.usuario = usuario;
