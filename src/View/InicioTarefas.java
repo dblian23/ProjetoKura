@@ -203,42 +203,61 @@ public static void main(String args[]) {
     }
 
     // Abre tela de edição
-    private void editarTarefa(int linha) {
-        DefaultTableModel modelo = (DefaultTableModel) jTableTarefas.getModel();
-        
-        int idTarefa = Integer.parseInt(modelo.getValueAt(linha, 0).toString());
-        String titulo = modelo.getValueAt(linha, 0).toString();
-        String descricao = modelo.getValueAt(linha, 1).toString();
-        String materia = modelo.getValueAt(linha, 2).toString();
-        String prioridade = modelo.getValueAt(linha, 3).toString();
-        String dataEntrega = modelo.getValueAt(linha, 5).toString();
-        
-        EditarTarefa editar = new EditarTarefa(
-            this,
-            idTarefa,
-            titulo,
-            descricao,
-            materia,
-            prioridade,
-            dataEntrega,
-            usuarioLogado
-        );
-        
-            editar.setVisible(true);
-            this.dispose();
+ private void editarTarefa(int linha) {
+    DefaultTableModel modelo = (DefaultTableModel) jTableTarefas.getModel();
 
-            
-        CriarTarefa editarTela = new CriarTarefa(this, linha, titulo, descricao, materia, prioridade, dataEntrega);
-        editarTela.setVisible(true);
-        this.setVisible(false);
-    }
+    int idTarefa = Integer.parseInt(modelo.getValueAt(linha, 0).toString());
+    String titulo = modelo.getValueAt(linha, 1).toString();
+    String descricao = modelo.getValueAt(linha, 2).toString();
+    String materia = modelo.getValueAt(linha, 3).toString();
+    String prioridade = modelo.getValueAt(linha, 4).toString();
+    LocalDate dataEntrega = LocalDate.parse(
+        modelo.getValueAt(linha, 6).toString()
+    );
+
+    Tarefa tarefa = new Tarefa();
+    tarefa.setIdTarefa(idTarefa);
+    tarefa.setTitulo(titulo);
+    tarefa.setDescricao(descricao);
+    tarefa.setMateria(materia);
+    tarefa.setPrioridade(prioridade);
+    tarefa.setDataEntrega(dataEntrega);
+    tarefa.setUsuario(usuarioLogado);
+
+    EditarTarefa editar = new EditarTarefa(this, usuarioLogado, tarefa);
+    editar.setVisible(true);
+    this.dispose();
+}
 
     // Exclui tarefa
-    private void excluirTarefa(int linha) {
-        DefaultTableModel modelo = (DefaultTableModel) jTableTarefas.getModel();
-        modelo.removeRow(linha);
-        JOptionPane.showMessageDialog(this, "Tarefa excluída!");
+private void excluirTarefa(int linha) {
+    int opcao = JOptionPane.showConfirmDialog(
+        this,
+        "Tem certeza que deseja excluir esta tarefa?",
+        "Confirmar exclusão",
+        JOptionPane.YES_NO_OPTION
+    );
+
+    if (opcao != JOptionPane.YES_OPTION) {
+        return;
     }
+
+    DefaultTableModel modelo = (DefaultTableModel) jTableTarefas.getModel();
+
+    int idTarefa = Integer.parseInt(
+        modelo.getValueAt(linha, 0).toString()
+    );
+
+    boolean sucesso = controller.excluir(idTarefa);
+
+    if (sucesso) {
+        modelo.removeRow(linha);
+        JOptionPane.showMessageDialog(this, "Tarefa excluída com sucesso!");
+    } else {
+        JOptionPane.showMessageDialog(this, "Erro ao excluir tarefa.");
+    }
+}
+
 
     // Renderer (botão na célula)
     class ButtonRenderer extends javax.swing.JButton implements javax.swing.table.TableCellRenderer {

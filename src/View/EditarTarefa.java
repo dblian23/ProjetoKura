@@ -197,7 +197,7 @@ public class EditarTarefa extends javax.swing.JFrame {
     String dataTexto = jTextFieldDataEntregaEditar.getText();
 
     // Validação simples (opcional, mas recomendado)
-    if (titulo.isEmpty() || descricao.isEmpty() || materia.isEmpty() || 
+    if (titulo.isEmpty() || materia.isEmpty() || 
         prioridade.equals("Selecione o nível de Prioridade") || dataTexto.isEmpty()) {
         JOptionPane.showMessageDialog(this, "Preencha todos os campos!");
         return;
@@ -222,14 +222,12 @@ public class EditarTarefa extends javax.swing.JFrame {
     tarefa.setDataEntrega(dataEntrega);
     tarefa.setUsuario(usuarioLogado);
 
-    tarefa.setIdTarefa(idTarefa);
     boolean sucesso = controller.editar(tarefa);
     
     if (sucesso) {
-        JOptionPane.showMessageDialog(this, "Tarefa criada com sucesso!");
+        JOptionPane.showMessageDialog(this, "Tarefa atualizada com sucesso!");
         this.dispose();
         new InicioTarefas(usuarioLogado).setVisible(true);
-        this.dispose();
     } else {
         JOptionPane.showMessageDialog(this, "Erro ao salvar tarefa.");
     }
