@@ -9,6 +9,7 @@ import java.awt.event.ActionListener;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import javax.swing.Timer;
+import Model.Usuario;
 
     
 
@@ -25,20 +26,35 @@ public class Pomodoro extends javax.swing.JFrame {
      private int ciclo = 0;  // conta quantos ciclos de pomodoro foram feitos
      private boolean emPausa = false;
      private boolean emTrabalho = true;
+     private Usuario usuarioLogado;
+
     /**
      * Creates new form Pomodoro
      */
-     
-    public Pomodoro() {
-        initComponents();
-        configurarTimer();
-        iniciarTrabalho(); 
-        
-        jButtonIniciar.addActionListener(e -> jButtonIniciarActionPerformed(e));
-        jButtonPausar.addActionListener(e -> jButtonPausarActionPerformed(e));
-        jButtonResetar.addActionListener(e -> jButtonResetarActionPerformed(e));
-        
-    }
+
+     public Pomodoro() {
+    initComponents();
+    configurarTimer();
+    iniciarTrabalho();
+
+    jButtonIniciar.addActionListener(e -> jButtonIniciarActionPerformed(e));
+    jButtonPausar.addActionListener(e -> jButtonPausarActionPerformed(e));
+    jButtonResetar.addActionListener(e -> jButtonResetarActionPerformed(e));
+}
+         
+public Pomodoro(Usuario usuario) {
+    initComponents();
+    this.usuarioLogado = usuario;
+
+    configurarTimer();
+    iniciarTrabalho();
+
+    jButtonIniciar.addActionListener(e -> jButtonIniciarActionPerformed(e));
+    jButtonPausar.addActionListener(e -> jButtonPausarActionPerformed(e));
+    jButtonResetar.addActionListener(e -> jButtonResetarActionPerformed(e));
+}
+    
+    
     
       private void configurarTimer() {
         timer = new Timer(1000, new ActionListener() {
@@ -186,12 +202,14 @@ public class Pomodoro extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        InicioTarefas tarefa = new InicioTarefas();
-        tarefa.setVisible(true);
+    InicioTarefas tarefa = new InicioTarefas(usuarioLogado);
+    tarefa.setVisible(true);
+    this.setVisible(false);
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        Perfil perfil = new Perfil ();
+        Perfil perfil = new Perfil (usuarioLogado);
         perfil.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed

@@ -3,6 +3,7 @@ package View;
 import Model.Usuario;
 
 import javax.swing.JOptionPane;
+import controller.UsuarioController;
 
 /**
  *
@@ -11,11 +12,12 @@ import javax.swing.JOptionPane;
 public class Perfil extends javax.swing.JFrame {
 
     private Usuario usuario;
+    private UsuarioController controller;
+    private boolean modoEdicao = false;
 
-    // Construtor vazio (necessário para o NetBeans abrir no Design)
-    public Perfil() {
-        initComponents();
-    }
+
+public Perfil() { }
+
     
  public Perfil(Usuario usuario) {
         initComponents();
@@ -23,6 +25,9 @@ public class Perfil extends javax.swing.JFrame {
 
         preencherCampos();
         bloquearCampos();
+        JOptionPane.showMessageDialog(null, 
+       "Esta tela não pode ser aberta sem login.");
+        dispose();
     }
 
     private void preencherCampos() {
@@ -156,34 +161,64 @@ private void bloquearCampos() {
     }//GEN-LAST:event_jtxtDataActionPerformed
 
     private void jbtnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnEditarActionPerformed
+if (!modoEdicao) {
         liberarCampos();
         JOptionPane.showMessageDialog(this, "Agora você pode editar seus dados.");
-    }//GEN-LAST:event_jbtnEditarActionPerformed
+        modoEdicao = true;
+        return;
+    }
 
+    String nome = jtxtNome.getText();
+    String email = jtxtEmail.getText();
+    String senha = jtxtSenha.getText();
+
+    if (nome.isEmpty() || email.isEmpty() || senha.isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Preencha todos os campos.");
+        return;
+    }
+        Usuario u = new Usuario();
+    u.setIdUsuario(usuario.getIdUsuario());
+    u.setNome(nome);
+    u.setEmail(email);
+    u.setSenha(senha);
+    u.setDataNascimento(usuario.getDataNascimento());
+
+    boolean sucesso = controller.editar(u);
+
+    if (sucesso) {
+        JOptionPane.showMessageDialog(this, "Dados atualizados com sucesso!");
+        usuario = u;
+        bloquearCampos();
+        modoEdicao = false;
+    } else {
+        JOptionPane.showMessageDialog(this, "Erro ao atualizar dados.");
+    }//GEN-LAST:event_jbtnEditarActionPerformed
+    }
+    
     private void jbtnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnExcluirActionPerformed
         int opcao = JOptionPane.showConfirmDialog(
-                this,
-                "Tem certeza que deseja excluir sua conta?",
-                "Excluir conta",
-                JOptionPane.YES_NO_OPTION
-        );
+        this,
+        "Tem certeza que deseja excluir sua conta?\nEssa ação não pode ser desfeita.",
+        "Excluir conta",
+        JOptionPane.YES_NO_OPTION,
+        JOptionPane.WARNING_MESSAGE
+    );
 
-        if (opcao == JOptionPane.YES_OPTION) {
-       
-            JOptionPane.showMessageDialog(this, "Conta excluída com sucesso.");
-            this.dispose();
-        }
+    if (opcao != JOptionPane.YES_OPTION) {
+        return;
+    }
+    
+       boolean sucesso = controller.excluir(usuario.getIdUsuario());
+
+    if (sucesso) {
+        JOptionPane.showMessageDialog(this, "Conta excluida com sucesso.");
+        System.exit(0);
+    } else {
+        JOptionPane.showMessageDialog(this, "Erro ao excluir conta.");
+    }
     }//GEN-LAST:event_jbtnExcluirActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-    java.awt.EventQueue.invokeLater(() -> {
-        new Perfil().setVisible(true);
-    });
-}
-
+        
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
