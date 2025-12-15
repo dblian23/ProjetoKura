@@ -53,7 +53,7 @@ public class Cadastro extends javax.swing.JFrame {
         jTextField5.setBackground(new java.awt.Color(31, 80, 20));
         jTextField5.setFont(new java.awt.Font("Gill Sans MT", 0, 24)); // NOI18N
         jTextField5.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField5.setText("Digite seu nome/");
+        jTextField5.setText("gfhghjkjhgfdfgh");
         jTextField5.setBorder(null);
         jTextField5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
