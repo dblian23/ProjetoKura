@@ -23,6 +23,10 @@ public class ConnectFactory {
                         "jdbc:mysql://localhost:3306/projetokura",
                         "root",
                         "MatheusLopes200209!"
+                        
+                    //    "jdbc:mysql://127.0.0.1:3306/projetokuramysql",
+                    //    "root",
+                    //    "Manu@02139786"
                 );
 
                 AppLogger.info("Conexão com o banco de dados estabelecida.");
