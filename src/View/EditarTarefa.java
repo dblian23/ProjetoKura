@@ -47,11 +47,11 @@ public class EditarTarefa extends javax.swing.JFrame {
         this.telaTarefas = telaTarefas;
         this.linhaEdicao = linha;
 
-        jTextFieldTitulo.setText(titulo);
-        jTextFieldDescrição.setText(descricao);
-        jTextFieldMatéria.setText(materia);
-        jComboBoxPrioridade.setSelectedItem(prioridade);
-        jTextFieldDataEntrega.setText(dataEntrega);
+        jTextFieldTituloEditar.setText(titulo);
+        jTextFieldDescriçãoEditar.setText(descricao);
+        jTextFieldMatériaEditar.setText(materia);
+        jComboBoxPrioridadeEditar.setSelectedItem(prioridade);
+        jTextFieldDataEntregaEditar.setText(dataEntrega);
     }
 
     /**
@@ -63,113 +63,112 @@ public class EditarTarefa extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jLayeredPane1 = new javax.swing.JLayeredPane();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jTextFieldDataEntrega = new javax.swing.JTextField();
-        jTextFieldTitulo = new javax.swing.JTextField();
-        jTextFieldDescrição = new javax.swing.JTextField();
-        jComboBoxPrioridade = new javax.swing.JComboBox<>();
-        jLabel3 = new javax.swing.JLabel();
-        jTextFieldMatéria = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
+        jScrollPane2Editar = new javax.swing.JScrollPane();
+        jLayeredPane1Editar = new javax.swing.JLayeredPane();
+        jButton1Editar = new javax.swing.JButton();
+        jButton2Editar = new javax.swing.JButton();
+        jTextFieldDataEntregaEditar = new javax.swing.JTextField();
+        jTextFieldTituloEditar = new javax.swing.JTextField();
+        jTextFieldDescriçãoEditar = new javax.swing.JTextField();
+        jComboBoxPrioridadeEditar = new javax.swing.JComboBox<>();
+        jTextFieldMatériaEditar = new javax.swing.JTextField();
+        jLabel1Editar = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 102, 102));
         setMinimumSize(new java.awt.Dimension(1440, 810));
 
-        jScrollPane2.setMaximumSize(new java.awt.Dimension(1440, 810));
-        jScrollPane2.setMinimumSize(new java.awt.Dimension(1440, 810));
-        jScrollPane2.setOpaque(false);
-        jScrollPane2.setPreferredSize(new java.awt.Dimension(1440, 810));
+        jScrollPane2Editar.setMaximumSize(new java.awt.Dimension(1440, 810));
+        jScrollPane2Editar.setMinimumSize(new java.awt.Dimension(1440, 810));
+        jScrollPane2Editar.setOpaque(false);
+        jScrollPane2Editar.setPreferredSize(new java.awt.Dimension(1440, 810));
 
-        jLayeredPane1.setBackground(new java.awt.Color(102, 102, 255));
-        jLayeredPane1.setMaximumSize(new java.awt.Dimension(1440, 810));
-        jLayeredPane1.setMinimumSize(new java.awt.Dimension(1440, 810));
-        jLayeredPane1.setName(""); // NOI18N
-        jLayeredPane1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jLayeredPane1Editar.setBackground(new java.awt.Color(102, 102, 255));
+        jLayeredPane1Editar.setMaximumSize(new java.awt.Dimension(1440, 810));
+        jLayeredPane1Editar.setMinimumSize(new java.awt.Dimension(1440, 810));
+        jLayeredPane1Editar.setName(""); // NOI18N
+        jLayeredPane1Editar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setBorder(null);
-        jButton1.setContentAreaFilled(false);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jButton1Editar.setBorder(null);
+        jButton1Editar.setContentAreaFilled(false);
+        jButton1Editar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jButton1EditarActionPerformed(evt);
             }
         });
-        jLayeredPane1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 700, 230, 40));
+        jLayeredPane1Editar.add(jButton1Editar, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 700, 230, 40));
 
-        jButton2.setContentAreaFilled(false);
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jButton2Editar.setContentAreaFilled(false);
+        jButton2Editar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                jButton2EditarActionPerformed(evt);
             }
         });
-        jLayeredPane1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 680, 90, 70));
+        jLayeredPane1Editar.add(jButton2Editar, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 690, 110, 90));
 
-        jTextFieldDataEntrega.setBackground(new java.awt.Color(31, 80, 20));
-        jTextFieldDataEntrega.setFont(new java.awt.Font("Gill Sans MT", 0, 24)); // NOI18N
-        jTextFieldDataEntrega.setForeground(new java.awt.Color(255, 255, 255));
-        jTextFieldDataEntrega.setText("Digite a data precista de conclusão/");
-        jTextFieldDataEntrega.setBorder(null);
-        jTextFieldDataEntrega.addActionListener(new java.awt.event.ActionListener() {
+        jTextFieldDataEntregaEditar.setBackground(new java.awt.Color(31, 80, 20));
+        jTextFieldDataEntregaEditar.setFont(new java.awt.Font("Gill Sans MT", 0, 24)); // NOI18N
+        jTextFieldDataEntregaEditar.setForeground(new java.awt.Color(255, 255, 255));
+        jTextFieldDataEntregaEditar.setText("Digite a data precista de conclusão/");
+        jTextFieldDataEntregaEditar.setBorder(null);
+        jTextFieldDataEntregaEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldDataEntregaActionPerformed(evt);
+                jTextFieldDataEntregaEditarActionPerformed(evt);
             }
         });
-        jLayeredPane1.add(jTextFieldDataEntrega, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 620, 510, 40));
+        jLayeredPane1Editar.add(jTextFieldDataEntregaEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 630, 520, 40));
 
-        jTextFieldTitulo.setBackground(new java.awt.Color(31, 80, 20));
-        jTextFieldTitulo.setFont(new java.awt.Font("Gill Sans MT", 0, 24)); // NOI18N
-        jTextFieldTitulo.setForeground(new java.awt.Color(255, 255, 255));
-        jTextFieldTitulo.setText("Digite o Titulo/");
-        jTextFieldTitulo.setBorder(null);
-        jLayeredPane1.add(jTextFieldTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 120, 510, 30));
+        jTextFieldTituloEditar.setBackground(new java.awt.Color(31, 80, 20));
+        jTextFieldTituloEditar.setFont(new java.awt.Font("Gill Sans MT", 0, 24)); // NOI18N
+        jTextFieldTituloEditar.setForeground(new java.awt.Color(255, 255, 255));
+        jTextFieldTituloEditar.setText("Digite o Titulo/");
+        jTextFieldTituloEditar.setBorder(null);
+        jLayeredPane1Editar.add(jTextFieldTituloEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 130, 520, 40));
 
-        jTextFieldDescrição.setEditable(false);
-        jTextFieldDescrição.setBackground(new java.awt.Color(31, 80, 20));
-        jTextFieldDescrição.setFont(new java.awt.Font("Gill Sans MT", 0, 24)); // NOI18N
-        jTextFieldDescrição.setForeground(new java.awt.Color(255, 255, 255));
-        jTextFieldDescrição.setText("Digite a Descrição/");
-        jTextFieldDescrição.setBorder(null);
-        jLayeredPane1.add(jTextFieldDescrição, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 250, 510, 30));
+        jTextFieldDescriçãoEditar.setEditable(false);
+        jTextFieldDescriçãoEditar.setBackground(new java.awt.Color(31, 80, 20));
+        jTextFieldDescriçãoEditar.setFont(new java.awt.Font("Gill Sans MT", 0, 24)); // NOI18N
+        jTextFieldDescriçãoEditar.setForeground(new java.awt.Color(255, 255, 255));
+        jTextFieldDescriçãoEditar.setText("Digite a Descrição/");
+        jTextFieldDescriçãoEditar.setBorder(null);
+        jLayeredPane1Editar.add(jTextFieldDescriçãoEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 260, 520, 40));
 
-        jComboBoxPrioridade.setBackground(new java.awt.Color(31, 80, 20));
-        jComboBoxPrioridade.setFont(new java.awt.Font("Gill Sans MT", 0, 24)); // NOI18N
-        jComboBoxPrioridade.setForeground(new java.awt.Color(255, 255, 255));
-        jComboBoxPrioridade.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione o nível de Prioridade", "Alta", "Média", "Baixa" }));
-        jComboBoxPrioridade.setBorder(null);
-        jLayeredPane1.add(jComboBoxPrioridade, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 500, 510, 30));
+        jComboBoxPrioridadeEditar.setBackground(new java.awt.Color(31, 80, 20));
+        jComboBoxPrioridadeEditar.setFont(new java.awt.Font("Gill Sans MT", 0, 24)); // NOI18N
+        jComboBoxPrioridadeEditar.setForeground(new java.awt.Color(255, 255, 255));
+        jComboBoxPrioridadeEditar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione o nível de Prioridade", "Alta", "Média", "Baixa" }));
+        jComboBoxPrioridadeEditar.setBorder(null);
+        jLayeredPane1Editar.add(jComboBoxPrioridadeEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 510, 510, 40));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/SetaVoltar.png"))); // NOI18N
-        jLayeredPane1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 670, 100, -1));
+        jTextFieldMatériaEditar.setBackground(new java.awt.Color(31, 80, 20));
+        jTextFieldMatériaEditar.setFont(new java.awt.Font("Gill Sans MT", 0, 24)); // NOI18N
+        jTextFieldMatériaEditar.setForeground(new java.awt.Color(255, 255, 255));
+        jTextFieldMatériaEditar.setText("Digite a Matéria/");
+        jTextFieldMatériaEditar.setBorder(null);
+        jLayeredPane1Editar.add(jTextFieldMatériaEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 380, 520, 40));
 
-        jTextFieldMatéria.setBackground(new java.awt.Color(31, 80, 20));
-        jTextFieldMatéria.setFont(new java.awt.Font("Gill Sans MT", 0, 24)); // NOI18N
-        jTextFieldMatéria.setForeground(new java.awt.Color(255, 255, 255));
-        jTextFieldMatéria.setText("Digite a Matéria/");
-        jTextFieldMatéria.setBorder(null);
-        jLayeredPane1.add(jTextFieldMatéria, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 370, 510, 30));
+        jLabel1Editar.setBackground(new java.awt.Color(204, 0, 255));
+        jLabel1Editar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/TelaEditarTarefa.png"))); // NOI18N
+        jLabel1Editar.setMaximumSize(new java.awt.Dimension(1440, 810));
+        jLabel1Editar.setMinimumSize(new java.awt.Dimension(1440, 810));
+        jLabel1Editar.setName(""); // NOI18N
+        jLabel1Editar.setPreferredSize(new java.awt.Dimension(1440, 810));
+        jLayeredPane1Editar.add(jLabel1Editar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1500, 840));
 
-        jLabel1.setBackground(new java.awt.Color(204, 0, 255));
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/imagens/TelaEditarTarefa.png"))); // NOI18N
-        jLabel1.setName(""); // NOI18N
-        jLayeredPane1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1440, 810));
+        jScrollPane2Editar.setViewportView(jLayeredPane1Editar);
+        jLayeredPane1Editar.getAccessibleContext().setAccessibleName("");
 
-        jScrollPane2.setViewportView(jLayeredPane1);
-        jLayeredPane1.getAccessibleContext().setAccessibleName("");
-
-        getContentPane().add(jScrollPane2, java.awt.BorderLayout.CENTER);
+        getContentPane().add(jScrollPane2Editar, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-    String titulo = jTextFieldTitulo.getText();
-    String descricao = jTextFieldDescrição.getText();
-    String materia = jTextFieldMatéria.getText();
-    String prioridade = jComboBoxPrioridade.getSelectedItem().toString();
-    String dataTexto = jTextFieldDataEntrega.getText();
+    private void jButton1EditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1EditarActionPerformed
+    String titulo = jTextFieldTituloEditar.getText();
+    String descricao = jTextFieldDescriçãoEditar.getText();
+    String materia = jTextFieldMatériaEditar.getText();
+    String prioridade = jComboBoxPrioridadeEditar.getSelectedItem().toString();
+    String dataTexto = jTextFieldDataEntregaEditar.getText();
 
     // Validação simples (opcional, mas recomendado)
     if (titulo.isEmpty() || descricao.isEmpty() || materia.isEmpty() || 
@@ -207,15 +206,15 @@ public class EditarTarefa extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, "Erro ao salvar tarefa.");
     }
 
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jButton1EditarActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void jButton2EditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2EditarActionPerformed
         this.setVisible(false);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_jButton2EditarActionPerformed
 
-    private void jTextFieldDataEntregaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldDataEntregaActionPerformed
+    private void jTextFieldDataEntregaEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldDataEntregaEditarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldDataEntregaActionPerformed
+    }//GEN-LAST:event_jTextFieldDataEntregaEditarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -243,16 +242,15 @@ public class EditarTarefa extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox<String> jComboBoxPrioridade;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLayeredPane jLayeredPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextField jTextFieldDataEntrega;
-    private javax.swing.JTextField jTextFieldDescrição;
-    private javax.swing.JTextField jTextFieldMatéria;
-    private javax.swing.JTextField jTextFieldTitulo;
+    private javax.swing.JButton jButton1Editar;
+    private javax.swing.JButton jButton2Editar;
+    private javax.swing.JComboBox<String> jComboBoxPrioridadeEditar;
+    private javax.swing.JLabel jLabel1Editar;
+    private javax.swing.JLayeredPane jLayeredPane1Editar;
+    private javax.swing.JScrollPane jScrollPane2Editar;
+    private javax.swing.JTextField jTextFieldDataEntregaEditar;
+    private javax.swing.JTextField jTextFieldDescriçãoEditar;
+    private javax.swing.JTextField jTextFieldMatériaEditar;
+    private javax.swing.JTextField jTextFieldTituloEditar;
     // End of variables declaration//GEN-END:variables
 }
