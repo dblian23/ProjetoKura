@@ -5,7 +5,7 @@ import Model.Usuario;
 import java.sql.*;
 import java.time.LocalDate;
 import java.sql.Date;
-import javax.swing.JOptionPane;
+import util.AppLogger;
 
 
 public class UsuarioDAO {
@@ -31,16 +31,10 @@ public class UsuarioDAO {
             stmt.execute();
             return true;
 
-        }catch (SQLException e) {
-            e.printStackTrace();  // manda pro Output do NetBeans
-            JOptionPane.showMessageDialog(
-            null,
-            "Erro ao cadastrar usuário:\n" + e.getMessage(),
-            "Erro SQL",
-            JOptionPane.ERROR_MESSAGE
-        );
-        return false;
-        }
+        } catch (SQLException e) {
+    AppLogger.error("Erro ao cadastrar usuário", e);
+    return false;
+}
     }
 
     public Usuario login(String email, String senha) {
@@ -73,8 +67,8 @@ public class UsuarioDAO {
             }
 
         } catch (SQLException e) {
-            System.out.println("Erro no login: " + e.getMessage());
-        }
+    AppLogger.error("Erro no login do usuário", e);
+}
         return null;
     }
 }

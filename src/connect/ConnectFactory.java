@@ -5,7 +5,7 @@ package connect;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import javax.swing.JOptionPane;
+import util.AppLogger;
 
 public class ConnectFactory {
 
@@ -22,12 +22,12 @@ public class ConnectFactory {
             );
 
         } catch (ClassNotFoundException e) {
-            JOptionPane.showMessageDialog(null, "Driver JDBC não encontrado:\n" + e.getMessage());
+            AppLogger.error("Driver JDBC não encontrado", e);
             return null;
 
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Erro de conexão com o banco:\n" + e.getMessage());
+            AppLogger.error("Erro de conexão com o banco de dados", e);
             return null;
-        }
+}
     }
 }

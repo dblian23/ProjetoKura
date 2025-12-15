@@ -1,0 +1,16 @@
+/dist/
+# NetBeans / Java build
+/build/
+/dist/
+
+# Compilados Java
+*.class
+*.jar
+*.zip
+
+# NetBeans private
+/nbproject/private/
+
+# Logs e temporários
+*.log
+*.tmp
