@@ -1,9 +1,9 @@
 package View;
 
 import Model.Usuario;
-
 import javax.swing.JOptionPane;
 import controller.UsuarioController;
+
 
 /**
  *
@@ -13,21 +13,20 @@ public class Perfil extends javax.swing.JFrame {
 
     private Usuario usuario;
     private UsuarioController controller;
-    private boolean modoEdicao = false;
 
+public Perfil(Usuario usuario) {
+        if (usuario == null) {
+            JOptionPane.showMessageDialog(null,
+                    "Esta tela não pode ser aberta sem login.");
+            dispose();
+            return;
+        }
 
-public Perfil() { }
-
-    
- public Perfil(Usuario usuario) {
         initComponents();
         this.usuario = usuario;
+        this.controller = new UsuarioController();
 
         preencherCampos();
-        bloquearCampos();
-        JOptionPane.showMessageDialog(null, 
-       "Esta tela não pode ser aberta sem login.");
-        dispose();
     }
 
     private void preencherCampos() {
@@ -35,15 +34,16 @@ public Perfil() { }
         jtxtEmail.setText(usuario.getEmail());
         jtxtSenha.setText(usuario.getSenha());
         jtxtData.setText(usuario.getDataNascimento().toString());
-    }
-    
-private void bloquearCampos() {
-        jtxtNome.setEditable(false);
-        jtxtEmail.setEditable(false);
-        jtxtSenha.setEditable(false);
+
+        // Campos já começam editáveis
+        jtxtNome.setEditable(true);
+        jtxtEmail.setEditable(true);
+        jtxtSenha.setEditable(true);
+
+        // Data continua apenas visual
         jtxtData.setEditable(false);
     }
-
+    
     private void liberarCampos() {
         jtxtNome.setEditable(true);
         jtxtEmail.setEditable(true);
@@ -161,61 +161,57 @@ private void bloquearCampos() {
     }//GEN-LAST:event_jtxtDataActionPerformed
 
     private void jbtnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnEditarActionPerformed
-if (!modoEdicao) {
-        liberarCampos();
-        JOptionPane.showMessageDialog(this, "Agora você pode editar seus dados.");
-        modoEdicao = true;
-        return;
-    }
+String nome = jtxtNome.getText().trim();
+        String email = jtxtEmail.getText().trim();
+        String senha = jtxtSenha.getText().trim();
 
-    String nome = jtxtNome.getText();
-    String email = jtxtEmail.getText();
-    String senha = jtxtSenha.getText();
+        if (nome.isEmpty() || email.isEmpty() || senha.isEmpty()) {
+            JOptionPane.showMessageDialog(this,
+                    "Preencha todos os campos.");
+            return;
+        }
 
-    if (nome.isEmpty() || email.isEmpty() || senha.isEmpty()) {
-        JOptionPane.showMessageDialog(this, "Preencha todos os campos.");
-        return;
-    }
         Usuario u = new Usuario();
-    u.setIdUsuario(usuario.getIdUsuario());
-    u.setNome(nome);
-    u.setEmail(email);
-    u.setSenha(senha);
-    u.setDataNascimento(usuario.getDataNascimento());
+        u.setIdUsuario(usuario.getIdUsuario());
+        u.setNome(nome);
+        u.setEmail(email);
+        u.setSenha(senha);
+        u.setDataNascimento(usuario.getDataNascimento());
 
-    boolean sucesso = controller.editar(u);
+        boolean sucesso = controller.editar(u);
 
-    if (sucesso) {
-        JOptionPane.showMessageDialog(this, "Dados atualizados com sucesso!");
-        usuario = u;
-        bloquearCampos();
-        modoEdicao = false;
-    } else {
-        JOptionPane.showMessageDialog(this, "Erro ao atualizar dados.");
+        if (sucesso) {
+            JOptionPane.showMessageDialog(this,
+                    "Dados atualizados com sucesso!");
+            usuario = u; // Atualiza usuário em memória
+        } else {
+            JOptionPane.showMessageDialog(this,
+                    "Erro ao atualizar os dados.");
+        }
     }//GEN-LAST:event_jbtnEditarActionPerformed
-    }
+    
     
     private void jbtnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnExcluirActionPerformed
         int opcao = JOptionPane.showConfirmDialog(
-        this,
-        "Tem certeza que deseja excluir sua conta?\nEssa ação não pode ser desfeita.",
-        "Excluir conta",
-        JOptionPane.YES_NO_OPTION,
-        JOptionPane.WARNING_MESSAGE
-    );
+                this,
+                "Tem certeza que deseja excluir sua conta?\nEssa ação não pode ser desfeita.",
+                "Excluir conta",
+                JOptionPane.YES_NO_OPTION,
+                JOptionPane.WARNING_MESSAGE
+        );
 
-    if (opcao != JOptionPane.YES_OPTION) {
-        return;
-    }
-    
-       boolean sucesso = controller.excluir(usuario.getIdUsuario());
+        if (opcao != JOptionPane.YES_OPTION) return;
 
-    if (sucesso) {
-        JOptionPane.showMessageDialog(this, "Conta excluida com sucesso.");
-        System.exit(0);
-    } else {
-        JOptionPane.showMessageDialog(this, "Erro ao excluir conta.");
-    }
+        boolean sucesso = controller.excluir(usuario.getIdUsuario());
+
+        if (sucesso) {
+            JOptionPane.showMessageDialog(this,
+                    "Conta excluída com sucesso.");
+            System.exit(0);
+        } else {
+            JOptionPane.showMessageDialog(this,
+                    "Erro ao excluir conta.");
+        }
     }//GEN-LAST:event_jbtnExcluirActionPerformed
 
         
